@@ -12,6 +12,8 @@ import { useState } from "react";
 import suziImg1 from "../assets/suzi1.png";
 import suziImg3 from "../assets/suzi3.png";
 import bg1 from "../assets/bg1.png";
+import sendLogo from "../assets//svgs/sendLogo.svg";
+import suziLanding from "../assets/suziLanding.png";
 
 export function SuziComp() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -24,6 +26,7 @@ export function SuziComp() {
   const [spendingLimit, setSpendingLimit] = useState("");
   const [goWild, setGoWild] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showLanding, setShowLanding] = useState(true);
 
   const colors = [
     { name: "red", class: "bg-red-500" },
@@ -49,6 +52,141 @@ export function SuziComp() {
   const handleSpankMe = () => {
     setShowModal(true);
   };
+
+  const handleLaunch = () => {
+    setShowLanding(false);
+  };
+
+  if (showLanding) {
+    return (
+      <div className="flex justify-center bg-white">
+        <div className="">
+          <Image
+            src={bg1}
+            alt="Background with Suzi character"
+            fill
+            className="object-cover w-full h-full" 
+          />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+          <div className="relative mx-auto max-w-6xl px-4 py-8">
+            <div className="flex items-center justify-between max-w-3xl">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={sendLogo}
+                  alt="Suzi logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full bg-white/10 p-1 backdrop-blur-sm"
+                />
+                <span className="text-2xl font-semibold text-white">
+                  Suzi by Send
+                </span>
+              </div>
+              <Button
+                variant="secondary"
+                className="bg-white/10 backdrop-blur-sm"
+              >
+                Dashboard
+              </Button>
+            </div>
+
+            <div className="mt-24 grid grid-cols-1 gap-12 lg:grid-cols-2">
+              <div className="space-y-8">
+                <div>
+                  <h1 className="font-cursive text-7xl font-bold text-white">
+                    Agents on
+                    <br />
+                    Solana
+                  </h1>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="rounded-xl border border-dashed border-white/20 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white">
+                        1
+                      </div>
+                      <p className="text-lg text-white/80">
+                        Add your tg alpha chat
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-dashed border-white/20 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white">
+                        2
+                      </div>
+                      <p className="text-lg text-white/80">
+                        Add USDC and set spending limit
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-dashed border-white/20 bg-white/5 p-4 backdrop-blur-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white">
+                        3
+                      </div>
+                      <p className="text-lg text-white/80">
+                        Let the agent trade! ^*^
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <Button
+                    onClick={handleLaunch}
+                    className="h-12 w-full rounded-xl bg-black text-lg font-semibold text-white hover:bg-black/80"
+                  >
+                    Launch Now!
+                  </Button>
+                  <p className="text-sm text-white/60">
+                    0.5 SOL will be deducted to create your suzi
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-white/60">
+                    <div className="rounded-full bg-white/10 p-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-4 w-4"
+                      >
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                        <path d="M12 9v4" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                    </div>
+                    <p>
+                      This is the start of an experiment, process at your own
+                      risk
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="z-20">
+          <Image
+            src={suziLanding}
+            alt="Suzi logo"
+            width={400}
+            height={400}
+            className="h-full w-full object-contain"
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen p-4 flex items-center">
@@ -204,8 +342,8 @@ export function SuziComp() {
               </div>
               <div className="rounded-xl bg-white p-4 shadow-lg">
                 <p className="text-gray-600">
-                  suzi is like mother, she &apos; s gorgeous, deep in crypto and deep
-                  in... you know what
+                  suzi is like mother, she &apos; s gorgeous, deep in crypto and
+                  deep in... you know what
                 </p>
               </div>
             </div>
