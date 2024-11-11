@@ -204,7 +204,7 @@ export function SuziComp() {
               </div>
               <div className="rounded-xl bg-white p-4 shadow-lg">
                 <p className="text-gray-600">
-                  suzi is like mother, she's gorgeous, deep in crypto and deep
+                  suzi is like mother, she &apos; s gorgeous, deep in crypto and deep
                   in... you know what
                 </p>
               </div>
