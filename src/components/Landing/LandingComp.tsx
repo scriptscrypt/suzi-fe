@@ -30,22 +30,25 @@ const LandingComp = () => {
         </div>
 
         {/* Content container */}
-        <div className="flex my-auto mx-32 z-20">
-          <div className="flex flex-1 flex-col w-full max-w-2xl p-0 bg-white rounded-3xl">
+        <div className="flex flex-col md:flex-row m-4 md:my-auto lg:mx-32 z-20">
+          <div className="flex flex-wrap flex-1 flex-col w-full max-w-2xl p-0 bg-white rounded-3xl">
             {/* Header */}
             <div className="flex items-center justify-between max-w-3xl bg-gradient-to-t rounded-2xl from-blue-100 to-white p-6 rounded-4xl">
-              <div className="flex items-center gap-2">
-                <Image
-                  src={sendLogo}
-                  alt="Suzi logo"
-                  width={40}
-                  height={40}
-                  className="rounded-full bg-gray-600/10 p-1"
-                />
-                <span className="text-2xl font-semibold text-gray-600">
-                  Suzi by Send
-                </span>
-              </div>
+              <span className="flex gap-1 items-center text-2xl font-semibold text-gray-600">
+                <span className="">Suzi</span>
+                <span className="">by</span>
+            
+                <div className="flex items-center gap-2">
+                  <Image
+                    src={sendLogo}
+                    alt="Suzi logo"
+                    width={40}
+                    height={40}
+                    className="rounded-full bg-gray-600/10 p-1"
+                  />
+                  Send
+                </div>
+              </span>
 
               <Button
                 variant="secondary"
@@ -56,7 +59,7 @@ const LandingComp = () => {
             </div>
 
             {/* Main content */}
-            <div className="flex flex-1 flex-col lg:flex-row gap-12 mt-24 p-6">
+            <div className="flex flex-1 flex-col lg:flex-row gap-12 mt-12 p-6">
               {/* Left column */}
               <div className="flex flex-col flex-1 gap-8">
                 <div>
